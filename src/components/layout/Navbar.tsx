@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useTheme } from "@/components/ThemeProvider";
 import { Sun, Moon } from "lucide-react";
 
@@ -43,9 +44,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Zap className="w-4 h-4 text-primary-foreground" strokeWidth={2.5} />
-              </div>
+              <Image src="/logo.jpeg" alt="DigiShift Logo" width={36} height={36} className="rounded-lg" />
               <span className="text-lg font-semibold tracking-tight">
                 DigiShift
               </span>

@@ -1,4 +1,5 @@
-import { Zap, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Leistungen", href: "#leistungen" },
@@ -21,9 +22,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <a href="#" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Zap className="w-4 h-4 text-primary-foreground" strokeWidth={2.5} />
-              </div>
+              <Image src="/logo.jpeg" alt="DigiShift Logo" width={36} height={36} className="rounded-lg" />
               <span className="text-lg font-semibold tracking-tight">DigiShift</span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
