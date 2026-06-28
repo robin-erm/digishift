@@ -1,4 +1,4 @@
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { streamText, convertToModelMessages } from "ai";
 
 const SYSTEM_PROMPT = `Du bist der freundliche KI-Assistent von DigiShift, einer KI-Automatisierungsagentur für kleine und mittelständische Unternehmen.
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: anthropic("claude-opus-4-8"),
+    model: google("gemini-2.0-flash"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     maxOutputTokens: 500,
