@@ -52,10 +52,17 @@ Halte Antworten prägnant und klar. Nutze keine übermäßigen Formalitäten, ab
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
+  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    return new Response(
+      JSON.stringify({ error: "GOOGLE_GENERATIVE_AI_API_KEY is not set" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
+  }
+
   const { messages } = await req.json();
 
   const result = streamText({
-    model: google("gemini-2.0-flash"),
+    model: google("gemini-1.5-flash"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     maxOutputTokens: 500,
