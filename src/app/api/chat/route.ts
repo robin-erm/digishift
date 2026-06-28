@@ -1,4 +1,4 @@
-import { google } from "@ai-sdk/google";
+import { groq } from "@ai-sdk/groq";
 import { streamText, convertToModelMessages } from "ai";
 
 const SYSTEM_PROMPT = `Du bist der freundliche KI-Assistent von DigiShift, einer KI-Automatisierungsagentur für kleine und mittelständische Unternehmen.
@@ -52,9 +52,9 @@ Halte Antworten prägnant und klar. Nutze keine übermäßigen Formalitäten, ab
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
-  if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+  if (!process.env.GROQ_API_KEY) {
     return new Response(
-      JSON.stringify({ error: "GOOGLE_GENERATIVE_AI_API_KEY is not set" }),
+      JSON.stringify({ error: "GROQ_API_KEY is not set" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: google("gemini-2.0-flash-lite"),
+    model: groq("llama-3.1-8b-instant"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
     maxOutputTokens: 500,
