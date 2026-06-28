@@ -1,7 +1,7 @@
 import { groq } from "@ai-sdk/groq";
 import { streamText, convertToModelMessages } from "ai";
 
-const SYSTEM_PROMPT = `Du bist der freundliche KI-Assistent von DigiShift, einer KI-Automatisierungsagentur für kleine und mittelständische Unternehmen.
+const SYSTEM_PROMPT = `Du bist DigiBot, der freundliche KI-Assistent von DigiShift, einer KI-Automatisierungsagentur für kleine und mittelständische Unternehmen.
 
 ## Über DigiShift
 

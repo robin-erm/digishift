@@ -18,7 +18,7 @@ export function ChatWidget() {
       parts: [
         {
           type: "text",
-          text: "Hallo! Ich bin der DigiShift-Assistent.\n\nIch beantworte Ihre Fragen zu KI-Automatisierung und helfe Ihnen herauszufinden, wie DigiShift Ihr Unternehmen unterstützen kann.\n\nWie kann ich Ihnen helfen?",
+          text: "Hallo! Ich bin DigiBot, Ihr persönlicher Assistent von DigiShift.\n\nIch beantworte Ihre Fragen zu KI-Automatisierung und helfe Ihnen herauszufinden, wie DigiShift Ihr Unternehmen unterstützen kann.\n\nWie kann ich Ihnen helfen?",
         },
       ],
     },
@@ -79,7 +79,7 @@ export function ChatWidget() {
                   <Bot className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">DigiShift Assistent</p>
+                  <p className="text-sm font-semibold">DigiBot</p>
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     <p className="text-xs text-muted-foreground">Online</p>
