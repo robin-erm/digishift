@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyDigiShift } from "@/components/sections/WhyDigiShift";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
+import { ChatWidget } from "@/components/ChatWidget";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
     </>
   );
 }
