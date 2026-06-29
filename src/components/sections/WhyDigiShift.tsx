@@ -31,8 +31,8 @@ const reasons = [
   },
   {
     icon: Users,
-    title: "Erfahrenes Team",
-    description: "Unser Team kombiniert Expertise in KI, Softwareentwicklung und Geschäftsprozessoptimierung.",
+    title: "Nachgewiesene Erfahrung",
+    description: "Praxiserprobte Expertise in KI, Workflow-Automatisierung und Geschäftsprozessoptimierung – aus erster Hand.",
   },
 ];
 
@@ -58,9 +58,9 @@ export function WhyDigiShift() {
               <span className="text-primary">KI-Automatisierung</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Wir sind nicht nur ein Dienstleister – wir sind Ihr strategischer
-              Partner auf dem Weg zur digitalisierten Zukunft Ihres Unternehmens.
-              Vertrauen, Qualität und messbare Ergebnisse sind unser Anspruch.
+              Kein anonymes Unternehmen, sondern ein persönlicher Ansprechpartner,
+              der mit Ihnen denkt. Vertrauen, Qualität und messbare Ergebnisse
+              stehen bei jedem Projekt an erster Stelle.
             </p>
 
             {/* Stat blocks */}
@@ -68,7 +68,7 @@ export function WhyDigiShift() {
               {[
                 { value: "100%", label: "Individuelle Entwicklung" },
                 { value: "24/7", label: "Automatisierung aktiv" },
-                { value: "<4 Wo.", label: "Typische Time-to-Live" },
+                { value: "<4 Wo.", label: "Typische Umsetzungszeit" },
                 { value: "1:1", label: "Persönliche Betreuung" },
               ].map((stat) => (
                 <div

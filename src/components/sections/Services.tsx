@@ -23,7 +23,7 @@ const services = [
     title: "KI-Chatbots",
     description:
       "Intelligente Chatbots für Website, Support und Leadgenerierung. 24/7 verfügbar, mehrsprachig und lernfähig.",
-    tags: ["GPT-4", "RAG", "CRM-Integration"],
+    tags: ["LLM", "RAG", "CRM-Integration"],
   },
   {
     icon: Settings2,

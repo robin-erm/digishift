@@ -27,6 +27,7 @@ export function Contact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,6 +38,7 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -46,7 +48,7 @@ export function Contact() {
       if (!res.ok) throw new Error();
       setSubmitted(true);
     } catch {
-      alert("Es gab einen Fehler. Bitte versuche es erneut oder schreib direkt an kontakt@digishift-ai.de");
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -211,6 +213,16 @@ export function Contact() {
                     className="rounded-xl bg-background border-border focus:border-primary resize-none"
                   />
                 </div>
+
+                {error && (
+                  <div className="rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                    Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an{" "}
+                    <a href="mailto:kontakt@digishift-ai.de" className="underline underline-offset-4">
+                      kontakt@digishift-ai.de
+                    </a>
+                    .
+                  </div>
+                )}
 
                 <button
                   type="submit"
