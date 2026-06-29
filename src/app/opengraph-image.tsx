@@ -37,6 +37,7 @@ export default function Image() {
             borderRadius: "50%",
             background:
               "radial-gradient(circle, rgba(59,110,246,0.18) 0%, transparent 70%)",
+            display: "flex",
           }}
         />
 
@@ -51,6 +52,7 @@ export default function Image() {
             borderRadius: "50%",
             background:
               "radial-gradient(circle, rgba(59,110,246,0.10) 0%, transparent 70%)",
+            display: "flex",
           }}
         />
 
@@ -75,7 +77,6 @@ export default function Image() {
               justifyContent: "center",
             }}
           >
-            {/* Simple D lettermark */}
             <span
               style={{
                 color: "#4a7aff",
@@ -99,21 +100,36 @@ export default function Image() {
           </span>
         </div>
 
-        {/* Main headline */}
+        {/* Main headline — two lines via flexDirection column */}
         <div
           style={{
-            color: "#ffffff",
-            fontSize: 64,
-            fontWeight: 700,
-            lineHeight: 1.08,
-            letterSpacing: -2,
+            display: "flex",
+            flexDirection: "column",
             marginBottom: 24,
-            maxWidth: 800,
           }}
         >
-          KI-Automatisierungen
-          <br />
-          <span style={{ color: "#4a7aff" }}>für Ihr Unternehmen.</span>
+          <span
+            style={{
+              color: "#ffffff",
+              fontSize: 64,
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: -2,
+            }}
+          >
+            KI-Automatisierungen
+          </span>
+          <span
+            style={{
+              color: "#4a7aff",
+              fontSize: 64,
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: -2,
+            }}
+          >
+            für Ihr Unternehmen.
+          </span>
         </div>
 
         {/* Subtitle */}
@@ -125,6 +141,7 @@ export default function Image() {
             lineHeight: 1.4,
             maxWidth: 640,
             marginBottom: 56,
+            display: "flex",
           }}
         >
           Wiederkehrende Prozesse automatisieren – Zeit sparen, Kosten senken,
@@ -188,6 +205,7 @@ export default function Image() {
             fontSize: 18,
             fontWeight: 500,
             letterSpacing: 0.3,
+            display: "flex",
           }}
         >
           digishift-ai.de
