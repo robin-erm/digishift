@@ -167,7 +167,11 @@ export function ChatWidget() {
                 </button>
               </form>
               <p className="text-[10px] text-muted-foreground text-center mt-2">
-                Powered by DigiShift KI
+                Mit dem Schreiben stimmen Sie der{" "}
+                <a href="/datenschutz" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  Datenverarbeitung durch Groq
+                </a>{" "}
+                zu.
               </p>
             </div>
           </motion.div>
