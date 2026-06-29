@@ -43,7 +43,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group">
+            <a href="/" className="flex items-center gap-2 group">
               <Image src="/logo.jpeg" alt="DigiShift Logo" width={36} height={36} className="rounded-lg" />
               <span className="text-lg font-semibold tracking-tight">
                 DigiShift
