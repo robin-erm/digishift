@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
-import Image from "next/image";
 
 const floatingOrbs = [
   { cx: "60%", cy: "20%", r: 280, delay: 0, color: "oklch(0.55 0.2 264 / 0.12)" },
@@ -10,30 +9,158 @@ const floatingOrbs = [
   { cx: "10%", cy: "70%", r: 160, delay: 4, color: "oklch(0.55 0.2 264 / 0.06)" },
 ];
 
+const nodePositions = [
+  { x: 50, y: 50 },
+  { x: 150, y: 120 },
+  { x: 260, y: 60 },
+  { x: 320, y: 160 },
+  { x: 180, y: 210 },
+  { x: 80, y: 170 },
+  { x: 240, y: 280 },
+  { x: 360, y: 240 },
+];
+
+const connections = [
+  [0, 1], [1, 2], [1, 4], [2, 3], [3, 7], [4, 6], [4, 5], [6, 7],
+];
+
+const flowPaths = [
+  { nodes: [0, 1, 2, 3, 7], times: [0, 0.27, 0.55, 0.80, 1] },
+  { nodes: [0, 1, 4, 6, 7], times: [0, 0.28, 0.50, 0.71, 1] },
+];
+
+function DataPacket({ pathIndex, delay }: { pathIndex: number; delay: number }) {
+  const path = flowPaths[pathIndex];
+  const cx = path.nodes.map((i) => nodePositions[i].x);
+  const cy = path.nodes.map((i) => nodePositions[i].y);
+  return (
+    <motion.circle
+      r={3.5}
+      fill="oklch(0.65 0.22 264)"
+      initial={{ cx: cx[0], cy: cy[0], opacity: 0 }}
+      animate={{
+        cx,
+        cy,
+        opacity: [0, 1, 1, 1, 0],
+      }}
+      transition={{
+        duration: 3.2,
+        delay,
+        repeat: Infinity,
+        repeatDelay: 1.5,
+        ease: "linear",
+        times: path.times,
+      }}
+    />
+  );
+}
+
 function HeroIllustration() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
-        <Image
-          src="/hero.jpg"
-          alt="Modernes Büro – DigiShift KI-Automatisierung"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
-        {/* Subtle dark overlay so badges pop and it blends with dark mode */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-        {/* Subtle blue tint on right edge to blend with bg */}
-        <div className="absolute inset-0 bg-gradient-to-l from-background/30 via-transparent to-transparent" />
-      </div>
+      <svg
+        viewBox="0 0 420 340"
+        className="w-full max-w-[520px] drop-shadow-2xl"
+        aria-hidden="true"
+      >
+        {/* Connections */}
+        {connections.map(([a, b], i) => (
+          <motion.line
+            key={i}
+            x1={nodePositions[a].x}
+            y1={nodePositions[a].y}
+            x2={nodePositions[b].x}
+            y2={nodePositions[b].y}
+            stroke="oklch(0.55 0.2 264)"
+            strokeWidth="1.5"
+            strokeOpacity="0.3"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 + i * 0.12, ease: "easeOut" }}
+          />
+        ))}
+
+        {/* Data packets flowing INPUT → OUTPUT */}
+        <DataPacket pathIndex={0} delay={2} />
+        <DataPacket pathIndex={0} delay={3.8} />
+        <DataPacket pathIndex={1} delay={2.9} />
+        <DataPacket pathIndex={1} delay={4.7} />
+
+        {/* Nodes */}
+        {nodePositions.map((pos, i) => (
+          <motion.g key={i}>
+            <motion.circle
+              cx={pos.x}
+              cy={pos.y}
+              r={i === 0 || i === 7 ? 18 : 13}
+              fill="oklch(0.55 0.2 264 / 0.15)"
+              stroke="oklch(0.55 0.2 264)"
+              strokeWidth="1.5"
+              strokeOpacity="0.6"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+            />
+            <motion.circle
+              cx={pos.x}
+              cy={pos.y}
+              r={i === 0 || i === 7 ? 6 : 4}
+              fill="oklch(0.6 0.2 264)"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 + i * 0.08 }}
+            />
+            {(i === 0 || i === 7) && (
+              <motion.circle
+                cx={pos.x}
+                cy={pos.y}
+                r={20}
+                fill="none"
+                stroke="oklch(0.55 0.2 264)"
+                strokeWidth="1"
+                strokeOpacity="0.4"
+                animate={{ r: [20, 32], opacity: [0.4, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+              />
+            )}
+          </motion.g>
+        ))}
+
+        {/* Labels */}
+        <motion.text
+          x={nodePositions[0].x}
+          y={nodePositions[0].y + 32}
+          textAnchor="middle"
+          fontSize="9"
+          fill="oklch(0.55 0.2 264)"
+          fontFamily="system-ui"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ delay: 1.5 }}
+        >
+          INPUT
+        </motion.text>
+        <motion.text
+          x={nodePositions[7].x}
+          y={nodePositions[7].y + 32}
+          textAnchor="middle"
+          fontSize="9"
+          fill="oklch(0.55 0.2 264)"
+          fontFamily="system-ui"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ delay: 1.5 }}
+        >
+          OUTPUT
+        </motion.text>
+      </svg>
 
       {/* Floating badges */}
       <motion.div
-        className="absolute top-4 right-4 bg-card/90 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
+        className="absolute top-4 right-0 bg-card/80 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
+        transition={{ delay: 1.8, duration: 0.5 }}
       >
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -42,10 +169,10 @@ function HeroIllustration() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-6 left-4 bg-card/90 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
+        className="absolute bottom-8 left-0 bg-card/80 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        transition={{ delay: 2, duration: 0.5 }}
       >
         <p className="text-xs text-muted-foreground">Zeitersparnis</p>
         <p className="text-sm font-semibold text-primary">-70% manuelle Arbeit</p>
