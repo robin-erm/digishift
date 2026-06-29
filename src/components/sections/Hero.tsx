@@ -24,6 +24,38 @@ const connections = [
   [0, 1], [1, 2], [1, 4], [2, 3], [3, 7], [4, 6], [4, 5], [6, 7],
 ];
 
+// Two full paths from INPUT (node 0) to OUTPUT (node 7)
+const flowPaths = [
+  { nodes: [0, 1, 2, 3, 7], times: [0, 0.27, 0.55, 0.80, 1] },
+  { nodes: [0, 1, 4, 6, 7], times: [0, 0.28, 0.50, 0.71, 1] },
+];
+
+function DataPacket({ pathIndex, delay }: { pathIndex: number; delay: number }) {
+  const path = flowPaths[pathIndex];
+  const cx = path.nodes.map((i) => nodePositions[i].x);
+  const cy = path.nodes.map((i) => nodePositions[i].y);
+  return (
+    <motion.circle
+      r={3.5}
+      fill="oklch(0.65 0.22 264)"
+      initial={{ cx: cx[0], cy: cy[0], opacity: 0 }}
+      animate={{
+        cx,
+        cy,
+        opacity: [0, 1, 1, 1, 0],
+      }}
+      transition={{
+        duration: 3.2,
+        delay,
+        repeat: Infinity,
+        repeatDelay: 1.5,
+        ease: "linear",
+        times: path.times,
+      }}
+    />
+  );
+}
+
 function HeroIllustration() {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
@@ -49,31 +81,11 @@ function HeroIllustration() {
           />
         ))}
 
-        {/* Animated data packets */}
-        {connections.slice(0, 4).map(([a, b], i) => (
-          <motion.circle
-            key={`packet-${i}`}
-            r={3}
-            fill="oklch(0.6 0.2 264)"
-            initial={{
-              cx: nodePositions[a].x,
-              cy: nodePositions[a].y,
-              opacity: 0,
-            }}
-            animate={{
-              cx: [nodePositions[a].x, nodePositions[b].x, nodePositions[a].x],
-              cy: [nodePositions[a].y, nodePositions[b].y, nodePositions[a].y],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3,
-              delay: 2 + i * 0.8,
-              repeat: Infinity,
-              repeatDelay: 2,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+        {/* Data packets flowing INPUT → OUTPUT */}
+        <DataPacket pathIndex={0} delay={2} />
+        <DataPacket pathIndex={0} delay={3.8} />
+        <DataPacket pathIndex={1} delay={2.9} />
+        <DataPacket pathIndex={1} delay={4.7} />
 
         {/* Nodes */}
         {nodePositions.map((pos, i) => (
@@ -99,7 +111,6 @@ function HeroIllustration() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 + i * 0.08 }}
             />
-            {/* Pulse on key nodes */}
             {(i === 0 || i === 7) && (
               <motion.circle
                 cx={pos.x}
@@ -165,7 +176,7 @@ function HeroIllustration() {
         transition={{ delay: 2, duration: 0.5 }}
       >
         <p className="text-xs text-muted-foreground">Zeitersparnis</p>
-        <p className="text-sm font-semibold text-primary">-68% manuelle Arbeit</p>
+        <p className="text-sm font-semibold text-primary">-70% manuelle Arbeit</p>
       </motion.div>
     </div>
   );
