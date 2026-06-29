@@ -8,10 +8,9 @@ export async function POST(req: Request) {
     return Response.json({ error: "Pflichtfelder fehlen" }, { status: 400 });
   }
 
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: "DigiShift Kontaktformular <onboarding@resend.dev>",
     to: "kontakt@digishift-ai.de",
-    replyTo: email,
     subject: `Neue Anfrage von ${name}${company ? ` – ${company}` : ""}`,
     html: `
       <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f9f9f9; border-radius: 12px;">
@@ -32,8 +31,11 @@ export async function POST(req: Request) {
   });
 
   if (error) {
-    return Response.json({ error: "E-Mail konnte nicht gesendet werden" }, { status: 500 });
+    console.error("Resend error:", JSON.stringify(error));
+    return Response.json({ error: "E-Mail konnte nicht gesendet werden", detail: error }, { status: 500 });
   }
+
+  console.log("Email sent:", data);
 
   return Response.json({ success: true });
 }
