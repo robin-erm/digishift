@@ -25,7 +25,7 @@ export default function Impressum() {
 
           <section>
             <h2 className="text-base font-semibold text-foreground mb-2">Kontakt</h2>
-            <p>E-Mail: info@digishift.de</p>
+            <p>E-Mail: kontakt@digishift-ai.de</p>
           </section>
 
           <section>

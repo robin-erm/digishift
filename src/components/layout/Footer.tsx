@@ -31,7 +31,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="mailto:info@digishift.de"
+                href="mailto:kontakt@digishift-ai.de"
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-200"
                 aria-label="E-Mail"
               >
@@ -74,10 +74,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@digishift.de"
+                  href="mailto:kontakt@digishift-ai.de"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  info@digishift.de
+                  kontakt@digishift-ai.de
                 </a>
               </li>
             </ul>

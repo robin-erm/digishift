@@ -21,7 +21,7 @@ export default function Datenschutz() {
               Robin Eremia<br />
               Eichenlaubweg 23<br />
               75181 Pforzheim<br />
-              E-Mail: info@digishift.de
+              E-Mail: kontakt@digishift-ai.de
             </p>
           </section>
 
@@ -69,14 +69,14 @@ export default function Datenschutz() {
               <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
             </ul>
             <p className="mt-3">
-              Zur Ausübung Ihrer Rechte wenden Sie sich per E-Mail an: <a href="mailto:info@digishift.de" className="text-primary hover:underline">info@digishift.de</a>
+              Zur Ausübung Ihrer Rechte wenden Sie sich per E-Mail an: <a href="mailto:kontakt@digishift-ai.de" className="text-primary hover:underline">kontakt@digishift-ai.de</a>
             </p>
           </section>
 
           <section>
             <h2 className="text-base font-semibold text-foreground mb-2">7. Datenlöschung</h2>
             <p>
-              Sie können jederzeit die Löschung Ihrer gespeicherten Daten beantragen. Schreiben Sie dazu eine E-Mail an <a href="mailto:info@digishift.de" className="text-primary hover:underline">info@digishift.de</a> mit dem Betreff „Datenlöschung". Wir bearbeiten Ihren Antrag innerhalb von 30 Tagen.
+              Sie können jederzeit die Löschung Ihrer gespeicherten Daten beantragen. Schreiben Sie dazu eine E-Mail an <a href="mailto:kontakt@digishift-ai.de" className="text-primary hover:underline">kontakt@digishift-ai.de</a> mit dem Betreff „Datenlöschung". Wir bearbeiten Ihren Antrag innerhalb von 30 Tagen.
             </p>
           </section>
 

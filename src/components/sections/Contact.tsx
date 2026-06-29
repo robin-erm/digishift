@@ -88,10 +88,10 @@ export function Contact() {
             <div className="mt-10 p-6 rounded-2xl bg-card border border-border">
               <p className="text-sm font-semibold mb-1">Direkt erreichbar</p>
               <a
-                href="mailto:info@digishift.de"
+                href="mailto:kontakt@digishift-ai.de"
                 className="text-primary text-sm hover:underline underline-offset-4"
               >
-                info@digishift.de
+                kontakt@digishift-ai.de
               </a>
             </div>
           </motion.div>

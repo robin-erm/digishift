@@ -32,7 +32,7 @@ DigiShift automatisiert wiederkehrende Geschäftsprozesse mit modernen KI-System
 - **Support**: 30 Tage kostenlose Fehlerbehebung nach Go-Live. Reaktion bei kritischen Problemen innerhalb weniger Stunden.
 
 ### Kontakt
-- E-Mail: info@digishift.de
+- E-Mail: kontakt@digishift-ai.de
 - Kostenloses Erstgespräch buchbar über die Website
 
 ## Deine Aufgabe
