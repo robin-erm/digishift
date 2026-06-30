@@ -31,7 +31,7 @@ export function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: -12, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -56,7 +56,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-200 hover:after:w-full"
                 >
                   {link.label}
                 </a>
@@ -78,7 +78,7 @@ export function Navbar() {
               </button>
               <a
                 href="#kontakt"
-                className="hidden md:inline-flex items-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-sm"
+                className="hidden md:inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all duration-200"
               >
                 Erstgespräch anfragen
               </a>
@@ -139,7 +139,7 @@ export function Navbar() {
                 <a
                   href="#kontakt"
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium"
+                  className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium"
                 >
                   Erstgespräch
                 </a>

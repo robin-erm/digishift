@@ -49,10 +49,10 @@ export function FAQ() {
             transition={{ duration: 0.6 }}
             className="lg:sticky lg:top-28 h-fit"
           >
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+            <span className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-3 block">
               FAQ
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-[2.75rem] font-medium tracking-[-0.02em] leading-[1.1] mb-4">
               Häufige Fragen
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -74,14 +74,10 @@ export function FAQ() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <Accordion multiple={false} className="space-y-3">
+            <Accordion multiple={false} className="border-y border-border">
               {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={index}
-                  className="border border-border rounded-xl bg-card px-6 open:border-primary/30"
-                >
-                  <AccordionTrigger className="text-left text-sm font-semibold no-underline py-5 gap-4">
+                <AccordionItem key={index} value={index}>
+                  <AccordionTrigger className="text-left text-sm font-medium no-underline py-5 gap-4 rounded-none">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">

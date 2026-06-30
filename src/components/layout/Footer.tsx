@@ -32,7 +32,7 @@ export function Footer() {
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="mailto:kontakt@digishift-ai.de"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-foreground/30 hover:text-foreground transition-all duration-200"
                 aria-label="E-Mail"
               >
                 <Mail className="w-4 h-4" />
@@ -41,7 +41,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-primary hover:text-primary transition-all duration-200"
+                className="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-foreground/30 hover:text-foreground transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">

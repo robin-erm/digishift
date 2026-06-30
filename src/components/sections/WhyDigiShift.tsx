@@ -43,16 +43,16 @@ export function WhyDigiShift() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="lg:sticky lg:top-28"
           >
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+            <span className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-3 block">
               Warum DigiShift
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-[2.75rem] font-medium tracking-[-0.02em] leading-[1.1] mb-6">
               Ihr Partner für
               <br />
               <span className="text-primary">KI-Automatisierung</span>
@@ -64,18 +64,17 @@ export function WhyDigiShift() {
             </p>
 
             {/* Stat blocks */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
               {[
                 { value: "100%", label: "Individuelle Entwicklung" },
                 { value: "24/7", label: "Automatisierung aktiv" },
                 { value: "<4 Wo.", label: "Typische Umsetzungszeit" },
                 { value: "1:1", label: "Persönliche Betreuung" },
               ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="bg-card border border-border rounded-xl p-4"
-                >
-                  <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                <div key={stat.label} className="bg-background p-4">
+                  <p className="text-2xl font-medium tracking-[-0.02em] text-primary tabular-nums">
+                    {stat.value}
+                  </p>
                   <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
                 </div>
               ))}
@@ -83,31 +82,28 @@ export function WhyDigiShift() {
           </motion.div>
 
           {/* Right: reasons */}
-          <div className="space-y-4">
-            {reasons.map((reason, i) => {
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="divide-y divide-border"
+          >
+            {reasons.map((reason) => {
               const Icon = reason.icon;
               return (
-                <motion.div
-                  key={reason.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card hover:border-primary/20 hover:bg-primary/5 transition-all duration-200 group"
-                >
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <Icon className="w-4 h-4 text-primary" strokeWidth={1.75} />
-                  </div>
+                <div key={reason.title} className="flex items-start gap-4 py-6 first:pt-0">
+                  <Icon className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <h3 className="text-sm font-semibold mb-1">{reason.title}</h3>
+                    <h3 className="text-sm font-medium mb-1">{reason.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {reason.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -70,13 +70,13 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[400px] max-h-[600px] flex flex-col rounded-2xl border border-border/60 bg-background/80 backdrop-blur-xl shadow-2xl shadow-black/20 overflow-hidden"
+            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[400px] max-h-[600px] flex flex-col rounded-lg border border-border/60 bg-background/80 backdrop-blur-xl shadow-2xl shadow-black/10 dark:shadow-black/40 overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border/60 bg-primary/5">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border/60 bg-muted/30">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p className="text-sm font-semibold">DigiBot</p>
@@ -182,7 +182,7 @@ export function ChatWidget() {
       <motion.button
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? "Chat schließen" : "Chat öffnen"}
-        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:scale-105 transition-all flex items-center justify-center"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg shadow-black/10 dark:shadow-black/40 hover:scale-[1.02] transition-all flex items-center justify-center"
         whileTap={{ scale: 0.95 }}
       >
         <AnimatePresence mode="wait" initial={false}>

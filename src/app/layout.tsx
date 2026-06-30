@@ -49,7 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" suppressHydrationWarning className={geist.variable}>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body
+        className="min-h-screen bg-background text-foreground antialiased"
+        suppressHydrationWarning
+      >
         <ThemeProvider defaultTheme="system" storageKey="digishift-theme">
           {children}
         </ThemeProvider>

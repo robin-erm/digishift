@@ -3,12 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 
-const floatingOrbs = [
-  { cx: "60%", cy: "20%", r: 280, delay: 0, color: "oklch(0.55 0.2 264 / 0.12)" },
-  { cx: "80%", cy: "60%", r: 200, delay: 2, color: "oklch(0.6 0.15 220 / 0.08)" },
-  { cx: "10%", cy: "70%", r: 160, delay: 4, color: "oklch(0.55 0.2 264 / 0.06)" },
-];
-
 const nodePositions = [
   { x: 50, y: 50 },
   { x: 150, y: 120 },
@@ -36,7 +30,7 @@ function DataPacket({ pathIndex, delay }: { pathIndex: number; delay: number }) 
   return (
     <motion.circle
       r={3.5}
-      fill="oklch(0.65 0.22 264)"
+      fill="oklch(0.5 0.19 264)"
       initial={{ cx: cx[0], cy: cy[0], opacity: 0 }}
       animate={{
         cx,
@@ -60,7 +54,7 @@ function HeroIllustration() {
     <div className="relative w-full h-full flex items-center justify-center">
       <svg
         viewBox="0 0 420 340"
-        className="w-full max-w-[520px] drop-shadow-2xl"
+        className="w-full max-w-[520px]"
         aria-hidden="true"
       >
         {/* Connections */}
@@ -71,9 +65,9 @@ function HeroIllustration() {
             y1={nodePositions[a].y}
             x2={nodePositions[b].x}
             y2={nodePositions[b].y}
-            stroke="oklch(0.55 0.2 264)"
-            strokeWidth="1.5"
-            strokeOpacity="0.3"
+            stroke="oklch(0.46 0 0)"
+            strokeWidth="1"
+            strokeOpacity="0.35"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 + i * 0.12, ease: "easeOut" }}
@@ -93,10 +87,10 @@ function HeroIllustration() {
               cx={pos.x}
               cy={pos.y}
               r={i === 0 || i === 7 ? 18 : 13}
-              fill="oklch(0.55 0.2 264 / 0.15)"
-              stroke="oklch(0.55 0.2 264)"
-              strokeWidth="1.5"
-              strokeOpacity="0.6"
+              fill={i === 0 || i === 7 ? "oklch(0.5 0.19 264 / 0.1)" : "oklch(0.145 0 0 / 0.04)"}
+              stroke={i === 0 || i === 7 ? "oklch(0.5 0.19 264)" : "oklch(0.46 0 0)"}
+              strokeWidth="1.25"
+              strokeOpacity={i === 0 || i === 7 ? 0.6 : 0.35}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
@@ -104,25 +98,12 @@ function HeroIllustration() {
             <motion.circle
               cx={pos.x}
               cy={pos.y}
-              r={i === 0 || i === 7 ? 6 : 4}
-              fill="oklch(0.6 0.2 264)"
+              r={i === 0 || i === 7 ? 5 : 3.5}
+              fill={i === 0 || i === 7 ? "oklch(0.5 0.19 264)" : "oklch(0.46 0 0)"}
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 + i * 0.08 }}
             />
-            {(i === 0 || i === 7) && (
-              <motion.circle
-                cx={pos.x}
-                cy={pos.y}
-                r={20}
-                fill="none"
-                stroke="oklch(0.55 0.2 264)"
-                strokeWidth="1"
-                strokeOpacity="0.4"
-                animate={{ r: [20, 32], opacity: [0.4, 0] }}
-                transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-              />
-            )}
           </motion.g>
         ))}
 
@@ -132,7 +113,7 @@ function HeroIllustration() {
           y={nodePositions[0].y + 32}
           textAnchor="middle"
           fontSize="9"
-          fill="oklch(0.55 0.2 264)"
+          fill="oklch(0.46 0 0)"
           fontFamily="system-ui"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
@@ -145,7 +126,7 @@ function HeroIllustration() {
           y={nodePositions[7].y + 32}
           textAnchor="middle"
           fontSize="9"
-          fill="oklch(0.55 0.2 264)"
+          fill="oklch(0.46 0 0)"
           fontFamily="system-ui"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
@@ -157,25 +138,25 @@ function HeroIllustration() {
 
       {/* Floating badges */}
       <motion.div
-        className="absolute top-4 right-0 bg-card/80 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
+        className="absolute top-4 right-0 bg-card/90 backdrop-blur-sm border border-border rounded-md px-3 py-2"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.8, duration: 0.5 }}
       >
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-emerald-500" />
           <span className="text-xs font-medium">Automatisierung aktiv</span>
         </div>
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 left-0 bg-card/80 backdrop-blur-sm border border-border rounded-xl px-3 py-2 shadow-lg"
+        className="absolute bottom-8 left-0 bg-card/90 backdrop-blur-sm border border-border rounded-md px-3 py-2"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.5 }}
       >
         <p className="text-xs text-muted-foreground">Zeitersparnis</p>
-        <p className="text-sm font-semibold text-primary">-70% manuelle Arbeit</p>
+        <p className="text-sm font-medium text-primary">-70% manuelle Arbeit</p>
       </motion.div>
     </div>
   );
@@ -184,37 +165,12 @@ function HeroIllustration() {
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Background gradient orbs */}
+      {/* Background grid pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {floatingOrbs.map((orb, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full blur-3xl"
-            style={{
-              left: orb.cx,
-              top: orb.cy,
-              width: orb.r * 2,
-              height: orb.r * 2,
-              transform: "translate(-50%, -50%)",
-              background: orb.color,
-            }}
-            animate={{
-              scale: [1, 1.15, 1],
-              opacity: [0.7, 1, 0.7],
-            }}
-            transition={{
-              duration: 8,
-              delay: orb.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-        {/* Grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.025] dark:opacity-[0.05]"
           style={{
-            backgroundImage: `linear-gradient(oklch(0.13 0.02 264) 1px, transparent 1px), linear-gradient(90deg, oklch(0.13 0.02 264) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(oklch(0.145 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(0.145 0 0) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
           }}
         />
@@ -225,15 +181,15 @@ export function Hero() {
           {/* Left: Content */}
           <div className="space-y-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 KI-Automatisierungsagentur
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-[-0.03em] leading-[1.05] text-foreground">
                 KI-Automatisierungen
                 <br />
                 <span className="text-primary">für Unternehmen.</span>
@@ -241,9 +197,9 @@ export function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
               Wir automatisieren wiederkehrende Geschäftsprozesse mit modernen
@@ -252,21 +208,21 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-3"
             >
               <a
                 href="#kontakt"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/25 hover:shadow-primary/40"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all duration-200"
               >
                 <Calendar className="w-4 h-4" />
                 Kostenloses Erstgespräch
               </a>
               <a
                 href="#leistungen"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-border text-foreground font-medium text-sm hover:bg-accent hover:border-accent-foreground/20 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md border border-border text-foreground font-medium text-sm hover:bg-accent transition-all duration-200"
               >
                 Leistungen ansehen
                 <ArrowRight className="w-4 h-4" />
@@ -277,18 +233,20 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-6 pt-4"
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-4"
             >
               {[
                 "Individuelle Lösungen",
                 "Schnelle Umsetzung",
                 "Persönlicher Support",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <div className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  </div>
+              ].map((item, i) => (
+                <div
+                  key={item}
+                  className={`text-sm text-muted-foreground ${
+                    i > 0 ? "border-l border-border pl-6" : ""
+                  }`}
+                >
                   {item}
                 </div>
               ))}
@@ -297,9 +255,9 @@ export function Hero() {
 
           {/* Right: Illustration */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="relative h-80 lg:h-[500px]"
           >
             <HeroIllustration />

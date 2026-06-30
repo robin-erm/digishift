@@ -57,7 +57,7 @@ export function Contact() {
   return (
     <section id="kontakt" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -66,10 +66,10 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:sticky lg:top-28"
           >
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+            <span className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-3 block">
               Kontakt
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-[2.75rem] font-medium tracking-[-0.02em] leading-[1.1] mb-6">
               Bereit für den
               <br />
               <span className="text-primary">nächsten Schritt?</span>
@@ -88,15 +88,13 @@ export function Contact() {
                 "Antwort innerhalb von 24 Stunden",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                  </div>
+                  <div className="w-1 h-1 rounded-full bg-primary shrink-0" />
                   {item}
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 p-6 rounded-2xl bg-card border border-border">
+            <div className="mt-10 p-6 rounded-lg bg-card border border-border">
               <p className="text-sm font-semibold mb-1">Direkt erreichbar</p>
               <a
                 href="mailto:kontakt@digishift-ai.de"
@@ -113,18 +111,19 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:h-full"
           >
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center text-center p-12 rounded-2xl bg-card border border-border h-full min-h-[480px] gap-6"
+                className="flex flex-col items-center justify-center text-center p-12 rounded-lg bg-card border border-border lg:h-full min-h-[480px] gap-6"
               >
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <CheckCircle className="w-8 h-8 text-primary" />
+                <div className="w-14 h-14 rounded-full border-2 border-primary/30 flex items-center justify-center">
+                  <CheckCircle className="w-7 h-7 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Anfrage erhalten!</h3>
+                  <h3 className="text-xl font-medium tracking-[-0.01em] mb-2">Anfrage erhalten!</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
                     Vielen Dank für Ihre Anfrage. Wir melden uns innerhalb von
                     24 Stunden bei Ihnen zurück.
@@ -134,7 +133,7 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-5 p-8 rounded-2xl bg-card border border-border"
+                className="flex flex-col lg:h-full gap-5 p-8 rounded-lg bg-card border border-border"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -148,7 +147,7 @@ export function Contact() {
                       onChange={handleChange}
                       placeholder="Max Mustermann"
                       required
-                      className="rounded-xl bg-background border-border focus:border-primary h-11"
+                      className="bg-background border-border focus:border-primary h-11"
                     />
                   </div>
                   <div className="space-y-2">
@@ -161,7 +160,7 @@ export function Contact() {
                       value={form.company}
                       onChange={handleChange}
                       placeholder="Muster GmbH"
-                      className="rounded-xl bg-background border-border focus:border-primary h-11"
+                      className="bg-background border-border focus:border-primary h-11"
                     />
                   </div>
                 </div>
@@ -179,7 +178,7 @@ export function Contact() {
                       onChange={handleChange}
                       placeholder="max@beispiel.de"
                       required
-                      className="rounded-xl bg-background border-border focus:border-primary h-11"
+                      className="bg-background border-border focus:border-primary h-11"
                     />
                   </div>
                   <div className="space-y-2">
@@ -193,12 +192,12 @@ export function Contact() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+49 123 456789"
-                      className="rounded-xl bg-background border-border focus:border-primary h-11"
+                      className="bg-background border-border focus:border-primary h-11"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="flex-1 flex flex-col gap-2 min-h-24">
                   <Label htmlFor="message" className="text-sm font-medium">
                     Nachricht <span className="text-primary">*</span>
                   </Label>
@@ -210,12 +209,12 @@ export function Contact() {
                     placeholder="Beschreiben Sie kurz, welche Prozesse Sie automatisieren möchten oder welche Herausforderungen Sie haben..."
                     required
                     rows={5}
-                    className="rounded-xl bg-background border-border focus:border-primary resize-none"
+                    className="bg-background border-border focus:border-primary resize-none flex-1 [field-sizing:fixed]"
                   />
                 </div>
 
                 {error && (
-                  <div className="rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                  <div className="rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
                     Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an{" "}
                     <a href="mailto:kontakt@digishift-ai.de" className="underline underline-offset-4">
                       kontakt@digishift-ai.de
@@ -227,7 +226,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/25 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>

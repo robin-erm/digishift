@@ -39,16 +39,16 @@ export function HowItWorks() {
     <section id="ablauf" className="py-24 sm:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+          <span className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-3 block">
             Ablauf
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-[2.75rem] font-medium tracking-[-0.02em] leading-[1.1]">
             So funktioniert es
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
@@ -57,53 +57,47 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
+                className="flex flex-col items-start"
+              >
+                {/* Step number + icon */}
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-5xl font-medium tracking-[-0.02em] text-primary/40 tabular-nums">
+                    {step.number}
+                  </span>
+                  <Icon className="w-4 h-4 text-foreground" strokeWidth={1.5} />
+                </div>
+                <div className="w-8 h-px bg-border mb-4" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative flex flex-col items-start"
-                >
-                  {/* Step number + icon */}
-                  <div className="relative mb-6">
-                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30 z-10 relative">
-                      <Icon className="w-5 h-5 text-primary-foreground" strokeWidth={1.75} />
-                    </div>
-                    <span className="absolute -top-2 -right-3 text-xs font-bold text-primary/40 font-mono">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  <h3 className="text-base font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+                <h3 className="text-base font-medium tracking-[-0.01em] mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="text-center mt-16"
         >
           <a
             href="#kontakt"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-all"
           >
             Jetzt Erstgespräch buchen
           </a>
