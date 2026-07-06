@@ -145,7 +145,7 @@ function HeroIllustration() {
       >
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span className="text-xs font-medium">Automatisierung aktiv</span>
+          <span className="text-xs font-medium">Digitalisierung aktiv</span>
         </div>
       </motion.div>
 
@@ -187,12 +187,12 @@ export function Hero() {
             >
               <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                KI-Automatisierungsagentur
+                Digitalisierungsberatung für KMU
               </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-[-0.03em] leading-[1.05] text-foreground">
-                KI-Automatisierungen
+                Digitalisierung für Ihr Unternehmen.
                 <br />
-                <span className="text-primary">für Unternehmen.</span>
+                <span className="text-primary">Einfach. Professionell.</span>
               </h1>
             </motion.div>
 
@@ -202,9 +202,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               className="text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              Wir automatisieren wiederkehrende Geschäftsprozesse mit modernen
-              KI-Lösungen – damit Sie Zeit sparen und sich auf Ihr Kerngeschäft
-              konzentrieren können.
+              Wir helfen kleinen und mittelständischen Unternehmen dabei, ihre
+              Prozesse zu digitalisieren, professioneller aufzutreten und mit
+              den richtigen Werkzeugen effizienter zu arbeiten.
             </motion.p>
 
             <motion.div

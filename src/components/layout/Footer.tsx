@@ -26,8 +26,9 @@ export function Footer() {
               <span className="text-lg font-semibold tracking-tight">DigiShift</span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              KI-Automatisierungen für kleine und mittelständische Unternehmen.
-              Wir sparen Ihnen Zeit und Kosten.
+              Digitalisierungsberatung für kleine und mittelständische
+              Unternehmen. Wir helfen Ihnen, moderner, effizienter und
+              digitaler zu werden.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a

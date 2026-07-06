@@ -18,7 +18,7 @@ export function ChatWidget() {
       parts: [
         {
           type: "text",
-          text: "Hallo! Ich bin DigiBot, Ihr persönlicher Assistent von DigiShift.\n\nIch beantworte Ihre Fragen zu KI-Automatisierung und helfe Ihnen herauszufinden, wie DigiShift Ihr Unternehmen unterstützen kann.\n\nWie kann ich Ihnen helfen?",
+          text: "Hallo! Ich bin DigiBot, Ihr persönlicher Assistent von DigiShift.\n\nIch beantworte Ihre Fragen zur Digitalisierung Ihres Unternehmens und helfe Ihnen herauszufinden, wie DigiShift Sie dabei unterstützen kann.\n\nWie kann ich Ihnen helfen?",
         },
       ],
     },
@@ -193,6 +193,7 @@ export function ChatWidget() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.15 }}
+              suppressHydrationWarning
             >
               <X className="w-5 h-5" />
             </motion.div>
@@ -203,6 +204,7 @@ export function ChatWidget() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.15 }}
+              suppressHydrationWarning
             >
               <MessageSquare className="w-5 h-5" />
             </motion.div>

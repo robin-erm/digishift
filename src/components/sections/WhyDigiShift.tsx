@@ -7,17 +7,17 @@ const reasons = [
   {
     icon: Lightbulb,
     title: "Individuelle Lösungen",
-    description: "Keine Standardprodukte. Jede Automatisierung wird speziell auf Ihre Prozesse und Ziele zugeschnitten.",
+    description: "Keine Standardprodukte. Jede Lösung wird speziell auf Ihre Prozesse und Ziele zugeschnitten.",
   },
   {
     icon: Gauge,
-    title: "Moderne KI-Technologien",
-    description: "Wir arbeiten mit den neuesten KI-Modellen und Automatisierungsplattformen – immer auf dem aktuellen Stand.",
+    title: "Moderne Technologien",
+    description: "Wir setzen auf bewährte, moderne Werkzeuge – von Automatisierungsplattformen bis hin zu KI-gestützten Lösungen, wenn sie echten Mehrwert bieten.",
   },
   {
     icon: CheckCircle2,
     title: "Schnelle Umsetzung",
-    description: "Erste Ergebnisse oft schon innerhalb weniger Wochen. Agile Entwicklung, klare Meilensteine.",
+    description: "Erste Ergebnisse oft schon innerhalb weniger Wochen. Klare Meilensteine, kein langes Warten.",
   },
   {
     icon: Handshake,
@@ -27,12 +27,12 @@ const reasons = [
   {
     icon: Target,
     title: "Fokus auf messbare Ergebnisse",
-    description: "Wir definieren KPIs und messen den Erfolg Ihrer Automatisierung – transparent und nachvollziehbar.",
+    description: "Wir definieren klare Ziele und messen den Erfolg Ihrer Digitalisierung – transparent und nachvollziehbar.",
   },
   {
     icon: Users,
     title: "Nachgewiesene Erfahrung",
-    description: "Praxiserprobte Expertise in KI, Workflow-Automatisierung und Geschäftsprozessoptimierung – aus erster Hand.",
+    description: "Praxiserprobte Expertise in Digitalisierung, Prozessautomatisierung und moderner Unternehmensführung – aus erster Hand.",
   },
 ];
 
@@ -55,7 +55,7 @@ export function WhyDigiShift() {
             <h2 className="text-3xl sm:text-[2.75rem] font-medium tracking-[-0.02em] leading-[1.1] mb-6">
               Ihr Partner für
               <br />
-              <span className="text-primary">KI-Automatisierung</span>
+              <span className="text-primary">Digitalisierung</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Kein anonymes Unternehmen, sondern ein persönlicher Ansprechpartner,
@@ -67,7 +67,7 @@ export function WhyDigiShift() {
             <div className="grid grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
               {[
                 { value: "100%", label: "Individuelle Entwicklung" },
-                { value: "24/7", label: "Automatisierung aktiv" },
+                { value: "24/7", label: "Digital im Einsatz" },
                 { value: "<4 Wo.", label: "Typische Umsetzungszeit" },
                 { value: "1:1", label: "Persönliche Betreuung" },
               ].map((stat) => (

@@ -1,37 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Workflow, MessageSquare, Settings2, ArrowUpRight } from "lucide-react";
+import { Globe, Workflow, CalendarClock, Settings2, ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
-    icon: Brain,
-    title: "KI-Automatisierungen",
+    icon: Globe,
+    title: "Digitale Präsenz",
     description:
-      "Automatisierung wiederkehrender Prozesse mit modernen KI-Systemen. Von der Dateneingabe bis zur Entscheidungsfindung.",
-    tags: ["Machine Learning", "NLP", "Computer Vision"],
+      "Eine moderne, professionelle Website, die Vertrauen schafft und neue Kunden gewinnt.",
+    tags: ["Website", "Onlineauftritt", "SEO-Grundlagen"],
   },
   {
     icon: Workflow,
-    title: "Workflow-Automatisierung",
+    title: "Prozessautomatisierung",
     description:
-      "Verknüpfung bestehender Software und automatisierte Abläufe. Nahtlose Integration in Ihre bestehende IT-Landschaft.",
-    tags: ["API-Integration", "n8n", "Zapier", "Make"],
+      "Wir digitalisieren Ihre Abläufe und automatisieren wiederkehrende Aufgaben – für mehr Effizienz im Tagesgeschäft.",
+    tags: ["Digitale Workflows", "Systemintegration", "Automatisierung"],
   },
   {
-    icon: MessageSquare,
-    title: "KI-Chatbots",
+    icon: CalendarClock,
+    title: "Terminbuchung & CRM",
     description:
-      "Intelligente Chatbots für Website, Support und Leadgenerierung. 24/7 verfügbar, mehrsprachig und lernfähig.",
-    tags: ["LLM", "RAG", "CRM-Integration"],
+      "Automatisierte Terminbuchung und strukturierte Kundenverwaltung – damit keine Anfrage verloren geht.",
+    tags: ["Terminbuchung", "CRM", "Lead-Erfassung"],
   },
   {
     icon: Settings2,
     title: "Individuelle Lösungen",
     description:
-      "Maßgeschneiderte Automatisierungen passend zu Ihren Geschäftsprozessen. Entwickelt für Ihre spezifischen Anforderungen.",
-    tags: ["Analyse", "Konzept", "Entwicklung"],
+      "Maßgeschneiderte Softwarelösungen für Ihre spezifischen Anforderungen – bei Bedarf unterstützt durch moderne KI-Werkzeuge.",
+    tags: ["Beratung", "Konzept", "Individuelle Entwicklung"],
   },
 ];
 
@@ -54,7 +54,7 @@ export function Services() {
               Was wir für Sie tun
             </h2>
             <p className="text-muted-foreground max-w-xs sm:text-right">
-              Von der Idee bis zur fertigen Automatisierung – aus einer Hand.
+              Von der ersten Idee bis zur fertigen Umsetzung – aus einer Hand.
             </p>
           </div>
         </motion.div>

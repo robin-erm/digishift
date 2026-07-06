@@ -10,31 +10,33 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "DigiShift – KI-Automatisierungen für Unternehmen",
+  title: "DigiShift – Digitalisierungsberatung für kleine und mittelständische Unternehmen",
   description:
-    "Wir automatisieren wiederkehrende Geschäftsprozesse mit modernen KI-Lösungen – damit Sie Zeit sparen und sich auf Ihr Kerngeschäft konzentrieren können.",
+    "Wir helfen kleinen und mittelständischen Unternehmen dabei, ihre Prozesse zu digitalisieren, professioneller aufzutreten und effizienter zu arbeiten.",
   keywords: [
-    "KI-Automatisierung",
-    "Workflow-Automatisierung",
-    "KI-Chatbots",
-    "Prozessoptimierung",
-    "KI Agentur",
-    "Automatisierung Unternehmen",
+    "Digitalisierungsberatung",
+    "Digitalisierungsagentur",
+    "Prozessdigitalisierung",
+    "Geschäftsprozess-Automatisierung",
+    "Website für KMU",
+    "Terminbuchungssystem",
+    "CRM-Lösungen",
+    "Digitale Workflows",
   ],
   authors: [{ name: "DigiShift" }],
   openGraph: {
-    title: "DigiShift – KI-Automatisierungen für Unternehmen",
+    title: "DigiShift – Digitalisierungsberatung für kleine und mittelständische Unternehmen",
     description:
-      "Wir automatisieren wiederkehrende Geschäftsprozesse mit modernen KI-Lösungen.",
+      "Wir helfen kleinen und mittelständischen Unternehmen dabei, ihre Prozesse zu digitalisieren und effizienter zu arbeiten.",
     type: "website",
     locale: "de_DE",
     siteName: "DigiShift",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DigiShift – KI-Automatisierungen für Unternehmen",
+    title: "DigiShift – Digitalisierungsberatung für kleine und mittelständische Unternehmen",
     description:
-      "Wir automatisieren wiederkehrende Geschäftsprozesse mit modernen KI-Lösungen.",
+      "Wir helfen kleinen und mittelständischen Unternehmen dabei, ihre Prozesse zu digitalisieren und effizienter zu arbeiten.",
   },
   robots: {
     index: true,

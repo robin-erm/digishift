@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, TrendingDown, Rocket } from "lucide-react";
+import { Clock, TrendingUp, BadgeCheck } from "lucide-react";
 
 const benefits = [
   {
     icon: Clock,
     title: "Zeit sparen",
     description:
-      "Reduzieren Sie manuelle Arbeit durch intelligente Automatisierungen und gewinnen Sie wertvolle Kapazitäten zurück.",
+      "Digitale Prozesse und klare Abläufe entlasten Sie und Ihr Team im Tagesgeschäft.",
     metric: "Bis zu 70%",
-    metricLabel: "weniger Zeitaufwand",
+    metricLabel: "weniger manueller Aufwand",
   },
   {
-    icon: TrendingDown,
-    title: "Kosten senken",
+    icon: TrendingUp,
+    title: "Mehr Kundenanfragen",
     description:
-      "Weniger Verwaltungsaufwand bedeutet geringere Betriebskosten und messbar bessere Margen für Ihr Unternehmen.",
-    metric: "Bis zu 40%",
-    metricLabel: "Kostenreduktion",
+      "Eine professionelle Website und einfache Terminbuchung sorgen dafür, dass Interessenten Sie leichter finden und erreichen.",
+    metric: "Rund um die Uhr",
+    metricLabel: "erreichbar für Anfragen",
   },
   {
-    icon: Rocket,
-    title: "Produktivität steigern",
+    icon: BadgeCheck,
+    title: "Professioneller Auftritt",
     description:
-      "Ihre Mitarbeiter konzentrieren sich auf wertschöpfende Aufgaben, statt Zeit mit Routinearbeiten zu verbringen.",
-    metric: "3× schneller",
-    metricLabel: "Prozessabläufe",
+      "Ein moderner Onlineauftritt und digitale Abläufe schaffen Vertrauen und heben Sie von Mitbewerbern ab.",
+    metric: "Erster Eindruck",
+    metricLabel: "der überzeugt",
   },
 ];
 
@@ -48,7 +48,7 @@ export function Benefits() {
             Was Sie gewinnen
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Unsere Automatisierungslösungen liefern messbare Ergebnisse – von
+            Unsere Digitalisierungslösungen liefern messbare Ergebnisse – von
             Tag eins an.
           </p>
         </motion.div>

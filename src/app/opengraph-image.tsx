@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "DigiShift – KI-Automatisierungen für Unternehmen";
+export const alt = "DigiShift – Digitalisierungsberatung für kleine und mittelständische Unternehmen";
 
 export const size = {
   width: 1200,
@@ -117,7 +117,7 @@ export default function Image() {
               letterSpacing: -2,
             }}
           >
-            KI-Automatisierungen
+            Digitalisierung für
           </span>
           <span
             style={{
@@ -128,7 +128,7 @@ export default function Image() {
               letterSpacing: -2,
             }}
           >
-            für Ihr Unternehmen.
+            Ihr Unternehmen.
           </span>
         </div>
 
@@ -144,8 +144,8 @@ export default function Image() {
             display: "flex",
           }}
         >
-          Wiederkehrende Prozesse automatisieren – Zeit sparen, Kosten senken,
-          Produktivität steigern.
+          Mehr Zeit, mehr Kundenanfragen und ein professionellerer Auftritt –
+          digital umgesetzt.
         </div>
 
         {/* Stats row */}
@@ -157,8 +157,8 @@ export default function Image() {
         >
           {[
             { value: "–70%", label: "manuelle Arbeit" },
-            { value: "–40%", label: "Betriebskosten" },
-            { value: "3×", label: "Produktivität" },
+            { value: "24/7", label: "erreichbar" },
+            { value: "100%", label: "individuell" },
           ].map((stat) => (
             <div
               key={stat.label}

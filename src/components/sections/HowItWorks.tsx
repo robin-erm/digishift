@@ -16,21 +16,21 @@ const steps = [
     icon: ScanSearch,
     title: "Analyse Ihrer Prozesse",
     description:
-      "Wir analysieren gemeinsam Ihre Abläufe und identifizieren die Prozesse mit dem größten Automatisierungspotenzial.",
+      "Wir analysieren gemeinsam Ihre Abläufe und identifizieren, wo Digitalisierung den größten Unterschied macht.",
   },
   {
     number: "03",
     icon: Code2,
-    title: "Entwicklung der Automatisierung",
+    title: "Entwicklung der Lösung",
     description:
-      "Unser Team entwickelt die maßgeschneiderte Lösung – transparent und mit regelmäßigen Updates für Sie.",
+      "Unser Team entwickelt die passende digitale Lösung für Ihr Unternehmen – transparent und mit regelmäßigen Updates für Sie.",
   },
   {
     number: "04",
     icon: Rocket,
     title: "Implementierung & Betreuung",
     description:
-      "Wir integrieren die Lösung in Ihre bestehenden Systeme und begleiten Sie auch danach persönlich.",
+      "Wir integrieren die Lösung in Ihren Arbeitsalltag und begleiten Sie auch danach persönlich.",
   },
 ];
 
@@ -52,7 +52,7 @@ export function HowItWorks() {
             So funktioniert es
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Von der ersten Idee bis zur laufenden Automatisierung – in vier
+            Von der ersten Idee bis zur laufenden Digitalisierung – in vier
             klaren Schritten.
           </p>
         </motion.div>

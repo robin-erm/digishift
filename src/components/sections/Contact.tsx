@@ -76,14 +76,14 @@ export function Contact() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-md">
               Vereinbaren Sie Ihr kostenloses Erstgespräch und erfahren Sie, wie
-              KI-Automatisierung Ihr Unternehmen voranbringt. Unverbindlich,
+              Digitalisierung Ihr Unternehmen voranbringt. Unverbindlich,
               transparent und ohne Verkaufsdruck.
             </p>
 
             <div className="space-y-4">
               {[
                 "Kostenloses 30-minütiges Erstgespräch",
-                "Analyse Ihres Automatisierungspotenzials",
+                "Analyse Ihres Digitalisierungspotenzials",
                 "Transparente Kosteneinschätzung",
                 "Antwort innerhalb von 24 Stunden",
               ].map((item) => (
@@ -206,7 +206,7 @@ export function Contact() {
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Beschreiben Sie kurz, welche Prozesse Sie automatisieren möchten oder welche Herausforderungen Sie haben..."
+                    placeholder="Beschreiben Sie kurz, was Sie digitalisieren möchten oder welche Herausforderungen Sie haben..."
                     required
                     rows={5}
                     className="bg-background border-border focus:border-primary resize-none flex-1 [field-sizing:fixed]"

@@ -12,27 +12,27 @@ const faqs = [
   {
     question: "Für welche Unternehmensgrößen eignen sich Ihre Lösungen?",
     answer:
-      "Unsere Lösungen sind speziell auf kleine und mittelständische Unternehmen (KMU) ausgerichtet – von Einzelunternehmen bis zu Unternehmen mit mehreren hundert Mitarbeitern. Wir passen Umfang und Technologie immer an Ihre Größe und Ihr Budget an. Entscheidend ist nicht die Unternehmensgröße, sondern das Vorhandensein wiederkehrender, zeitintensiver Prozesse.",
+      "Unsere Lösungen sind speziell auf kleine und mittelständische Unternehmen (KMU) ausgerichtet – von Einzelunternehmen bis zu Betrieben mit mehreren hundert Mitarbeitern. Wir passen Umfang und Technologie immer an Ihre Größe und Ihr Budget an. Entscheidend ist nicht die Unternehmensgröße, sondern der Wunsch, digitaler und effizienter zu werden.",
   },
   {
-    question: "Wie lange dauert die Entwicklung einer Automatisierung?",
+    question: "Wie lange dauert die Umsetzung einer Digitalisierungslösung?",
     answer:
-      "Die Entwicklungsdauer hängt von der Komplexität des Prozesses ab. Einfachere Automatisierungen wie E-Mail-Verarbeitung oder Datentransfer sind oft innerhalb von 1–2 Wochen umgesetzt. Komplexere KI-Systeme mit Datenbankintegration und individuellem Training benötigen 4–8 Wochen. In unserem kostenlosen Erstgespräch erhalten Sie eine realistische Einschätzung.",
+      "Die Umsetzungsdauer hängt vom Umfang des Projekts ab. Eine professionelle Website oder ein Buchungssystem sind oft innerhalb von 1–2 Wochen umgesetzt. Komplexere Digitalisierungsprojekte mit mehreren Systemen benötigen 4–8 Wochen. In unserem kostenlosen Erstgespräch erhalten Sie eine realistische Einschätzung.",
   },
   {
     question: "Welche bestehenden Software-Systeme können integriert werden?",
     answer:
-      "Wir integrieren nahezu jede Software, die über eine API oder einen Datenexport verfügt – darunter CRM-Systeme (HubSpot, Salesforce, Pipedrive), ERP-Systeme (SAP, DATEV, Lexoffice), E-Mail-Dienste, Google Workspace, Microsoft 365, Shopify, WooCommerce und viele weitere. Auch Legacy-Systeme ohne moderne API können oft über alternative Wege angebunden werden.",
+      "Wir integrieren nahezu jede Software, die über eine Schnittstelle oder einen Datenexport verfügt – darunter CRM-Systeme (HubSpot, Salesforce, Pipedrive), ERP-Systeme (SAP, DATEV, Lexoffice), E-Mail-Dienste, Google Workspace, Microsoft 365, Shopify, WooCommerce und viele weitere. Auch ältere Systeme ohne moderne Schnittstelle lassen sich oft über alternative Wege anbinden.",
   },
   {
-    question: "Was kostet eine KI-Automatisierung?",
+    question: "Was kostet eine Digitalisierungslösung?",
     answer:
-      "Die Kosten variieren je nach Komplexität, Umfang und benötigter Technologie. Einstiegsprojekte beginnen typischerweise ab 1.500 €. Wir bieten auch Retainer-Modelle für kontinuierliche Betreuung und Weiterentwicklung an. In unserem kostenlosen Erstgespräch analysieren wir Ihren Bedarf und erstellen ein transparentes Angebot ohne versteckte Kosten.",
+      "Die Kosten variieren je nach Umfang und benötigter Technologie. Einstiegsprojekte beginnen typischerweise ab 1.500 €. Wir bieten auch Betreuungsmodelle für kontinuierliche Weiterentwicklung an. In unserem kostenlosen Erstgespräch analysieren wir Ihren Bedarf und erstellen ein transparentes Angebot ohne versteckte Kosten.",
   },
   {
-    question: "Was passiert, wenn die Automatisierung nach der Übergabe nicht mehr funktioniert?",
+    question: "Was passiert, wenn eine Lösung nach der Übergabe nicht mehr funktioniert?",
     answer:
-      "Wir stehen Ihnen auch nach der Implementierung zur Seite. Jede Lösung erhält einen persönlichen Ansprechpartner und auf Wunsch einen Wartungsvertrag. Kleinere Anpassungen und Fehlerbehebungen innerhalb der ersten 30 Tage nach Go-Live sind grundsätzlich kostenlos. Bei kritischen Problemen reagieren wir innerhalb weniger Stunden.",
+      "Wir stehen Ihnen auch nach der Implementierung zur Seite. Jede Lösung erhält einen persönlichen Ansprechpartner und auf Wunsch einen Betreuungsvertrag. Kleinere Anpassungen und Fehlerbehebungen innerhalb der ersten 30 Tage nach Go-Live sind grundsätzlich kostenlos. Bei kritischen Problemen reagieren wir innerhalb weniger Stunden.",
   },
 ];
 
